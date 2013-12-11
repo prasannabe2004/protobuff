@@ -1,0 +1,6 @@
+sudo apt-get install protobuf-c-compiler
+sudo apt-get install libprotobuf-c0-dev
+protoc-c --c_out=. amessage.proto
+gcc amessage.pb-c.c recevier.c -lprotobuf-c -o recevier
+gcc amessage.pb-c.c sender.c -lprotobuf-c -o sender
+./sender 10 2 | ./recevier
